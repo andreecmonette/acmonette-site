@@ -4,7 +4,7 @@ Category: Blog
 Tags: beginning, musing
 Slug: the-beginning
 Author: Andree Monette
-Summary: Starting out
+Summary: Embarking on a new journey ... 
 
 Embarking on a new journey is always interesting. I’ve lived on the internet as long as I can remember, but I haven’t really made a concentrated effort before now to make an online presence under my “day identity”. So this is my first real foray into that whole world. I get the sense it’s different from expressing oneself pseudonymously, as in that case there’s a sort of “identity management” that can go on – you can be anyone to anything at a click. So a major challenge here is going to be blogging relatively uninhibited given that the stakes are a bit higher with one’s name.
 

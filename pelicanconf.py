@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 
 AUTHOR = u'Andree Monette'
 SITENAME = u'Andree Monette'
-SITEURL = 'andreecmonette.github.io'
+SITEURL = 'http://andreecmonette.github.io'
 
 SITESUBTITLE = 'Thoughts, in stereo.'
 SITETAG = "and cat mon"
@@ -32,7 +32,7 @@ LINKS =  (('Pelican', 'http://getpelican.com/'),
           ('You can modify those links in your config file', '#'),)
 
 # Social widget
-SOCIAL = (('Twitter', 'http://twitter.com/andreecmonette','fa fa-twitter-square fa-fw fa-lg'),
+SOCIAL = (('Twitter', 'http://twitter.com/andreemonette','fa fa-twitter-square fa-fw fa-lg'),
     ('GitHub', 'http://github.com/andreecmonette','fa fa-github-square fa-fw fa-lg'),)
 
 DEFAULT_PAGINATION = 10
