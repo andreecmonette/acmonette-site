@@ -35,4 +35,18 @@ A DistroWeb node is initialized by executing the file distroweb.js, which serves
 
 ## Distributed hash table
 
-One of the core concerns we had when writing DistroWeb is that we wanted to reduce our reliance on centralized servers as much as possible. We took our inspiration from distributed protocols (most notably [BitTorrent](http://en.wikipedia.org/wiki/BitTorrent)). 
+One of the core concerns we had when writing DistroWeb is that we wanted to reduce our reliance on centralized servers as much as possible. We took our inspiration from distributed protocols (most notably [BitTorrent](http://en.wikipedia.org/wiki/BitTorrent)). Traditionally, BitTorrent files have been accessed through central tracker files, but more recently people have been using the Kademlia protocol to find files on a network. DistroWeb reimplements the distributed hash table idea that is at the heart of protocols like Kademlia. Currently, this is implemented by providing (currently, hardcoding) a list of some peers which is distributed to each node on initial startup. When a page is requested via a hash, the [Hamming distance](http://en.wikipedia.org/wiki/Hamming_distance) between the binary encodings of the hash and each peer's node ID is calculated, and then a request for the hash including the port being listened on is passed along to the "closest" peer to that node. If the connection fails, the request is passed to the next closest and so on. At the receiving end, the node pushes the address that the connection was received on and the port it is listening on onto the request and continues to relay it until it reaches a node that doesn't have any closer nodes listed. This peer then "takes responsibility" for the file, serving whatever tracker information it has on that hash to the originator, and accepting notifications from nodes that a particular version of a file is being served. 
+
+## Peer regeneration
+
+[^1]If a peer times out or does not respond to DistroWeb requests while searching for a file, other peers are asked for some of their peers in order to replace the missing peers. Peers that initiate a DistroWeb request are also added to the recipient's peers list, up to a limit. Peers that time out are only removed from a list if they can be replaced - if the end of the peers list is reached without making a valid connection the assumption is made that the client's network connection is temporarily nonfunctional. When peers are replaced or added, the list of tracker files will be checked to see whether any new peers are closer to some of the node's tracked hashes than the node themselves, and if they are, those tracker files will be sent to the nodes in question for concatenation to whatever tracker file they have currently. 
+
+## Signed versioning
+
+(As of March 17, this hasn't been implemented yet either.) Documents will carry a header signed with the private key corresponding to their hash - this signature will consist of a version number and checksum of the content. Additionally, the tracker packets will keep track of version numbers, to more easily facilitate updating of content. If a tracker node is informed that someone is seeding a newer version of a document, it will check that the document corresponds to the same hash and then notify the nodes that it is tracking that a newer version is available. (Generally, this will happen first when the owner of the document updates it and sends a notification about updating it into the DHT). 
+
+## Client-based naming
+
+Clients can choose the names that they apply to documents, but documents include a suggested name that the client will associated with a given hash.
+
+[^1]: (As of March 17, this hasn't been implemented yet.) 
