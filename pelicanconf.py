@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 
 AUTHOR = u'Andree Monette'
 SITENAME = u'Andree Monette'
-SITEURL = 'http://andreecmonette.github.io'
+SITEURL = 'http://acmonette.com'
 
 SITESUBTITLE = 'Thoughts, in stereo.'
 SITETAG = "and cat mon"
