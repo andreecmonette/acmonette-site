@@ -44,3 +44,5 @@ THEME = "pelican-themes/voidy-bootstrap"
 
 # Uncomment following line if you want document-relative URLs when developing
 RELATIVE_URLS = True
+
+GOOGLE_ANALYTICS = "UA-49329911-1"
