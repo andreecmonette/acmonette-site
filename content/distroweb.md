@@ -1,10 +1,10 @@
 Title: DistroWeb: past, present, and future
 Date: 2014-03-16 23:30
 Category: Programming
-Tags: hacker school, coding, distroweb
+Tags: hacker school, coding, distroweb, node, javascript
 Slug: distroweb
 Author: Andree Monette
-Summary: Distroweb
+Summary: The idea for DistroWeb ...
 
 The idea for [DistroWeb](https://github.com/sudowhoami/distroweb/) came to [Rose Ames](https://github.com/sudowhoami/) and I during a [late-night Japanese curry dinner](http://www.gogocurryusa-ny.com/) after having just seen [Richard Stallman's talk at the Cooper Union](http://www.meetup.com/ny-tech/events/164513032/) on free software. We didn't implement any ideas from the talk itself, but it got us in a mood of thinking about distributed systems. We chatted about what major centralized systems could be decentralized. A few major examples came to mind:
 
