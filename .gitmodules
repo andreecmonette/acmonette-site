@@ -1,0 +1,3 @@
+[submodule "andreecmonette.github.io"]
+	path = output
+	url = git://github.com/andreecmonette/andreecmonette.github.io.git
