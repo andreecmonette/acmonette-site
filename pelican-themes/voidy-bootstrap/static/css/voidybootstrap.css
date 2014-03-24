@@ -1,3 +1,12 @@
+code {
+  padding: 2px 4px;
+  font-size: 90%;
+  color: #000099;
+  white-space: nowrap;
+  background-color: #d9f2f4;
+  border-radius: 4px;
+}
+
 h1 {
   font-family: 'Lucida Console', monospace;
 }
